@@ -22,7 +22,7 @@ pod 'NFCDecoder'
 
 ## Author
 
-alex.vasenin, alex.vasenin@me.com
+Alexander Vasenin, alexv@impekable.com
 
 ## License
 

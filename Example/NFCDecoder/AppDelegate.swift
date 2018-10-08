@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  NFCDecoder
 //
-//  Created by alex.vasenin on 10/08/2018.
-//  Copyright (c) 2018 alex.vasenin. All rights reserved.
+//  Created by Alexander Vasenin on 10/08/2018.
+//  Copyright (c) 2018 Impekable LLC. All rights reserved.
 //
 
 import UIKit
