@@ -8,4 +8,8 @@ target 'NFCDecoder_Example' do
   end
 end
 
+post_install do |installer|
+    installer.pods_project.root_object.attributes["ORGANIZATIONNAME"] = "Impekable LLC"
+end
+
 
