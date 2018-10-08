@@ -28,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0687DBE1A0FB86EA1DD6C655 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		0687DBE1A0FB86EA1DD6C655 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		07E31F2F80A3877A80CE60AA /* Pods-NFCDecoder_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFCDecoder_Example.release.xcconfig"; path = "Target Support Files/Pods-NFCDecoder_Example/Pods-NFCDecoder_Example.release.xcconfig"; sourceTree = "<group>"; };
 		1AC24EB7FA15CF591EF9F253 /* Pods_NFCDecoder_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NFCDecoder_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* NFCDecoder_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NFCDecoder_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,10 +41,10 @@
 		607FACE51AFB9204008FA782 /* NFCDecoder_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NFCDecoder_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		6C5BFB4CFBC8D5427C6B002F /* NFCDecoder.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = NFCDecoder.podspec; path = ../NFCDecoder.podspec; sourceTree = "<group>"; };
+		6C5BFB4CFBC8D5427C6B002F /* NFCDecoder.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = NFCDecoder.podspec; path = ../NFCDecoder.podspec; sourceTree = "<group>"; };
 		764CFF52352A6E2D4D753F62 /* Pods_NFCDecoder_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NFCDecoder_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D3B33BCBE5CBA630A9F6527 /* Pods-NFCDecoder_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFCDecoder_Tests.debug.xcconfig"; path = "Target Support Files/Pods-NFCDecoder_Tests/Pods-NFCDecoder_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		86960E4C1104D79D0732811C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		86960E4C1104D79D0732811C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		C0E1423045555CE724100E30 /* Pods-NFCDecoder_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFCDecoder_Example.debug.xcconfig"; path = "Target Support Files/Pods-NFCDecoder_Example/Pods-NFCDecoder_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		FB446F9EE35F7CC2D67D5605 /* Pods-NFCDecoder_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFCDecoder_Tests.release.xcconfig"; path = "Target Support Files/Pods-NFCDecoder_Tests/Pods-NFCDecoder_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,7 +147,6 @@
 				7D3B33BCBE5CBA630A9F6527 /* Pods-NFCDecoder_Tests.debug.xcconfig */,
 				FB446F9EE35F7CC2D67D5605 /* Pods-NFCDecoder_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
