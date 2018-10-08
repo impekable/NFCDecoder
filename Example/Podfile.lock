@@ -1,0 +1,16 @@
+PODS:
+  - NFCDecoder (0.1.0)
+
+DEPENDENCIES:
+  - NFCDecoder (from `../`)
+
+EXTERNAL SOURCES:
+  NFCDecoder:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  NFCDecoder: 4f586ab4a887e385532016246b80441e25bb71a1
+
+PODFILE CHECKSUM: 1826cc1a45362e9ebe6c6d8bae69fae1a0cc6c96
+
+COCOAPODS: 1.6.0.beta.1
