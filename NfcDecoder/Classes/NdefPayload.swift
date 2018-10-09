@@ -26,12 +26,6 @@ public enum NdefPayload {
     /// Smart poster (see NFC Forum Smart Poster Record Type Definition)
     case smartPoster([NdefPayload])
     
-    /// MIME-encoded media (see RFC 2046)
-    case media(Data)
-    
-    /// External type data (see NFC Forum NFC Record Type Definition)
-    case external(Data)
-    
     /// Unknown data
     case unknown(Data)
     
