@@ -1,5 +1,5 @@
 import XCTest
-import NFCDecoder
+import NfcDecoder
 
 class Tests: XCTestCase {
     
