@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreNFC
+import NfcDecoder
 
 class ViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     
@@ -20,9 +21,7 @@ class ViewController: UIViewController, NFCNDEFReaderSessionDelegate {
         setupAppearance()
     }
     
-    @IBAction func didTapScanButton(_ sender: Any) {
-        startNfcSession()
-    }
+    @IBAction func didTapScanButton(_ sender: Any) { startNfcSession() }
     
     // MARK: NFC scanning
     
@@ -38,7 +37,7 @@ class ViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     private func stopNfcSession() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { // Forces checkmark screen to disappear after 0.5 seconds (not 3.0) https://stackoverflow.com/a/50730560/2432781
             let session = self.nfcSession!
-            self.nfcSession = nil // ensure we ignore error cause by calling session.invalidate()
+            self.nfcSession = nil // ensure we ignore error caused by calling session.invalidate()
             session.invalidate()
         }
     }
@@ -52,7 +51,12 @@ class ViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     }
     
     func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
-        display(success: true, message: messages.debugDescription)
+        do {
+            let payload = try NfcDecoder().decode(messages)
+            display(success: true, message: payload.debugDescription)
+        } catch let error {
+            display(success: false, message: error.localizedDescription)
+        }
         stopNfcSession()
     }
     
