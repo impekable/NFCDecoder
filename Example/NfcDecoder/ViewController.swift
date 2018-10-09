@@ -11,7 +11,8 @@ import CoreNFC
 
 class ViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     
-    @IBOutlet weak var resultsLabel: UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var scanButton: UIButton!
     
     override func viewDidLoad() {
@@ -29,27 +30,29 @@ class ViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     
     private func startNfcSession() {
         guard nfcSession == nil else { return }
-        guard NFCNDEFReaderSession.readingAvailable else { resultsLabel.text = "ERROR\nNFC requires iPhone 7 or higher and at least iOS 11"; return }
+        guard NFCNDEFReaderSession.readingAvailable else { display(success: false, message: "NFC requires iPhone 7 or higher and at least iOS 11"); return }
         nfcSession = NFCNDEFReaderSession(delegate: self, queue: DispatchQueue.main, invalidateAfterFirstRead: false)
         nfcSession!.begin()
     }
     
     private func stopNfcSession() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { // Forces checkmark screen to disappear after 0.5 seconds (not 3.0) https://stackoverflow.com/a/50730560/2432781
-            self.nfcSession!.invalidate()
-            self.nfcSession = nil
+            let session = self.nfcSession!
+            self.nfcSession = nil // ensure we ignore error cause by calling session.invalidate()
+            session.invalidate()
         }
     }
     
     // MARK: NFCReaderSessionDelegate
     
     func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
-        resultsLabel.text = "ERROR\n" + error.localizedDescription
+        guard nfcSession != nil else { return }
+        display(success: false, message: error.localizedDescription)
         stopNfcSession()
     }
     
     func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
-        resultsLabel.text = "SUCCESS\n" + messages.description
+        display(success: true, message: messages.debugDescription)
         stopNfcSession()
     }
     
@@ -57,9 +60,14 @@ class ViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     
     private func setupAppearance() {
         scanButton.titleLabel!.font = .systemFont(ofSize: UIFont.buttonFontSize, weight: .semibold)
-        scanButton.layer.borderColor = UIColor.blue.cgColor
+        scanButton.layer.borderColor = UIColor.lightGray.cgColor
         scanButton.layer.cornerRadius = 22
         scanButton.layer.borderWidth = 1
+    }
+    
+    private func display(success: Bool, message: String) {
+        statusLabel.text = success ? "✅" : "❌"
+        messageLabel.text = message
     }
     
 }
