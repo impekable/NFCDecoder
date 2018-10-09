@@ -12,7 +12,7 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		6F305D8F216C30110070B51A /* NfcDecoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F305D8D216C2F940070B51A /* NfcDecoderTests.swift */; };
 		7B9945B4DD4200AA76EE0930 /* Pods_NfcDecoder_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC24EB7FA15CF591EF9F253 /* Pods_NfcDecoder_Example.framework */; };
 		F9BA80C6ECED9C2DD9C4F333 /* Pods_NfcDecoder_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 764CFF52352A6E2D4D753F62 /* Pods_NfcDecoder_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -40,8 +40,8 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* NfcDecoder_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NfcDecoder_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6C5BFB4CFBC8D5427C6B002F /* NfcDecoder.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = NfcDecoder.podspec; path = ../NfcDecoder.podspec; sourceTree = "<group>"; };
+		6F305D8D216C2F940070B51A /* NfcDecoderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NfcDecoderTests.swift; sourceTree = "<group>"; };
 		764CFF52352A6E2D4D753F62 /* Pods_NfcDecoder_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NfcDecoder_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D3B33BCBE5CBA630A9F6527 /* Pods-NfcDecoder_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NfcDecoder_Tests.debug.xcconfig"; path = "Target Support Files/Pods-NfcDecoder_Tests/Pods-NfcDecoder_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		86960E4C1104D79D0732811C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				6F305D8D216C2F940070B51A /* NfcDecoderTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -343,7 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				6F305D8F216C30110070B51A /* NfcDecoderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
