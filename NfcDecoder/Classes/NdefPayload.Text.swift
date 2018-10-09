@@ -14,9 +14,11 @@ extension NdefPayload {
      Textual NDEF payload
      */
     
-    public struct Text {
+    public struct Text: CustomStringConvertible {
         
         // FIXME
+        
+        public var description: String { return "Text" } // FIXME
         
     }
     

@@ -14,9 +14,11 @@ extension NdefPayload {
      URI NDEF payload
      */
     
-    public struct Uri {
+    public struct Uri: CustomStringConvertible {
         
         // FIXME
+        
+        public var description: String { return "URI" } // FIXME
         
     }
     

@@ -12,7 +12,7 @@ import Foundation
  NDEF payload (application data carried within an NDEF record)
  */
 
-public enum NdefPayload {
+public enum NdefPayload: CustomStringConvertible {
     
     /// No payload
     case empty
@@ -28,6 +28,21 @@ public enum NdefPayload {
     
     /// Unknown data
     case unknown(Data)
+    
+    public var description: String {
+        switch self {
+        case .empty:
+            return "Empty Payload"
+        case .text(let text):
+            return text.description
+        case .uri(let uri):
+            return uri.description
+        case .smartPoster(let contents):
+            return "Smart Poster " + contents.description
+        case .unknown(let data):
+            return "Unknown Payload (\(data.count) bytes)"
+        }
+    }
     
 }
 

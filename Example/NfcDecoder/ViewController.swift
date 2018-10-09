@@ -53,7 +53,7 @@ class ViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
         do {
             let payload = try NfcDecoder().decode(messages)
-            display(success: true, message: payload.debugDescription)
+            display(success: true, message: payload.description)
         } catch let error {
             display(success: false, message: error.localizedDescription)
         }
