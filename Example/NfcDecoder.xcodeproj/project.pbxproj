@@ -42,6 +42,7 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C5BFB4CFBC8D5427C6B002F /* NfcDecoder.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = NfcDecoder.podspec; path = ../NfcDecoder.podspec; sourceTree = "<group>"; };
 		6F305D8D216C2F940070B51A /* NfcDecoderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NfcDecoderTests.swift; sourceTree = "<group>"; };
+		6F305D91216C36F80070B51A /* NfcDecoder_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NfcDecoder_Example.entitlements; sourceTree = "<group>"; };
 		764CFF52352A6E2D4D753F62 /* Pods_NfcDecoder_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NfcDecoder_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D3B33BCBE5CBA630A9F6527 /* Pods-NfcDecoder_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NfcDecoder_Tests.debug.xcconfig"; path = "Target Support Files/Pods-NfcDecoder_Tests/Pods-NfcDecoder_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		86960E4C1104D79D0732811C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -108,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACD41AFB9204008FA782 /* Info.plist */,
+				6F305D91216C36F80070B51A /* NfcDecoder_Example.entitlements */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -213,6 +215,11 @@
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						LastSwiftMigration = 0900;
+						SystemCapabilities = {
+							com.apple.NearFieldCommunicationTagReading = {
+								enabled = 1;
+							};
+						};
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -487,6 +494,7 @@
 			baseConfigurationReference = C0E1423045555CE724100E30 /* Pods-NfcDecoder_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NfcDecoder/NfcDecoder_Example.entitlements;
 				INFOPLIST_FILE = NfcDecoder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -501,6 +509,7 @@
 			baseConfigurationReference = 07E31F2F80A3877A80CE60AA /* Pods-NfcDecoder_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NfcDecoder/NfcDecoder_Example.entitlements;
 				INFOPLIST_FILE = NfcDecoder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
