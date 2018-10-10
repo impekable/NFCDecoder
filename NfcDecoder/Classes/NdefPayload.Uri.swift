@@ -16,10 +16,24 @@ extension NdefPayload {
     
     public struct Uri: CustomStringConvertible {
         
-        // FIXME
+        private let payload: Data
         
-        public var description: String { return "URI" } // FIXME
+        public init(_ record: NdefRecord) {
+            precondition(record.isUriRecord)
+            self.payload = record.payload
+        }
         
+        // Based on "URI Record Type Definition - Technical Specification"
+        
+        /// Actual URL
+        public var url: URL { return URL(string: uriPrefix.string + restOfTheUri)! }
+        
+        private var uriPrefix: Prefix { return Prefix(rawValue: payload[0])! }
+        
+        private var restOfTheUri: String { return String(data: payload[1...], encoding: .utf8)! }
+        
+        public var description: String { return url.absoluteString }
+                
     }
     
 }
