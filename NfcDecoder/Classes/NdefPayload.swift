@@ -27,7 +27,7 @@ public enum NdefPayload: CustomStringConvertible {
     case smartPoster([NdefPayload])
     
     /// Unknown data
-    case unknown(RawNdefRecord)
+    case unknown(NdefRecord)
     
     public var description: String {
         switch self {

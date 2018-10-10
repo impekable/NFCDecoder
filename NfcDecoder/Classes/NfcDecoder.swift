@@ -30,7 +30,23 @@ public class NfcDecoder {
     
     /// Decodes NFCNDEFPayload into NdefPayload
     public func decode(_ record: NFCNDEFPayload) throws -> NdefPayload {
-        return NdefPayload.unknown(RawNdefRecord(record)) // FIXME
+        return try decode(record as NdefRecord)
+    }
+    
+    /// Decodes NdefRecord into NdefPayload
+    public func decode(_ record: NdefRecord) throws -> NdefPayload {
+        switch true {
+        case record.isTextRecord:
+            let text = NdefPayload.Text(record)
+            return NdefPayload.text(text)
+        case record.isUriRecord:
+            let uri = NdefPayload.Uri(record)
+            return NdefPayload.uri(uri)
+        case record.isSmartPosterRecord:
+            fatalError() // FIXME
+        default:
+            return NdefPayload.unknown(record)
+        }
     }
     
 }
