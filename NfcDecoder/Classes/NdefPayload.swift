@@ -27,7 +27,7 @@ public enum NdefPayload: CustomStringConvertible {
     case smartPoster([NdefPayload])
     
     /// Unknown data
-    case unknown(Data)
+    case unknown(NdefRecord)
     
     public var description: String {
         switch self {
@@ -38,9 +38,9 @@ public enum NdefPayload: CustomStringConvertible {
         case .uri(let uri):
             return "NdefPayload.uri \(uri.description)"
         case .smartPoster(let contents):
-            return "NdefPayload.smartPoster \(contents.description)" 
-        case .unknown(let data):
-            return "NdefPayload.unknown <\(data.hexEncodedString(separator: " ", every: 4))>"
+            return "NdefPayload.smartPoster \(contents.description)"
+        case .unknown(let record):
+            return "NdefPayload.unknown \(record.description)"
         }
     }
     

@@ -30,7 +30,7 @@ public class NfcDecoder {
     
     /// Decodes single NFCNDEFPayload into NdefPayload
     public func decode(_ record: NFCNDEFPayload) throws -> NdefPayload {
-        return NdefPayload.unknown(record.payload) // FIXME
+        return NdefPayload.unknown(NdefRecord(record)) // FIXME
     }
     
 }
