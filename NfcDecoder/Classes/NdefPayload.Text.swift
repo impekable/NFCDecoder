@@ -23,7 +23,7 @@ extension NdefPayload {
             self.payload = record.payload
         }
         
-        // Based on "Text Record Type Definition - Technical Specification"
+        /* Based on "Text Record Type Definition - Technical Specification" */
         
         private var status: UInt8 { return payload[0] }
         private var encoding: String.Encoding { return (status & (1 << 7)) > 0 ? .utf16BigEndian : .utf8 }

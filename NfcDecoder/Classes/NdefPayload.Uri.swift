@@ -23,7 +23,7 @@ extension NdefPayload {
             self.payload = record.payload
         }
         
-        // Based on "URI Record Type Definition - Technical Specification"
+        /* Based on "URI Record Type Definition - Technical Specification" */
         
         /// Actual URL
         public var url: URL { return URL(string: uriPrefix.string + restOfTheUri)! }
