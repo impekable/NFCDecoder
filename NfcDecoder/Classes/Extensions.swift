@@ -1,5 +1,5 @@
 //
-//  Data+Extensions.swift
+//  Extensions.swift
 //  NfcDecoder
 //
 //  Created by Alexander Vasenin on 10/10/2018.
