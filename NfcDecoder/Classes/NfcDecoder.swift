@@ -27,7 +27,8 @@ public class NfcDecoder {
         return try message.records.map { try decode($0) }
     }
     
-    func decode(_ payload: NFCNDEFPayload) throws -> NdefPayload {
+    /// Decodes single NFCNDEFPayload into NdefPayload
+    public func decode(_ record: NFCNDEFPayload) throws -> NdefPayload {
         return NdefPayload.empty // FIXME
     }
     
