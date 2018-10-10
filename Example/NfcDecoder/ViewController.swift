@@ -41,7 +41,7 @@ class ViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     
     private func stopNfcSession() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { // Forces checkmark screen to disappear after 0.5 seconds (not 3.0) https://stackoverflow.com/a/50730560/2432781
-            let session = self.nfcSession!
+            guard let session = self.nfcSession else { return }
             self.nfcSession = nil // ensure we ignore error caused by calling session.invalidate()
             session.invalidate()
         }
