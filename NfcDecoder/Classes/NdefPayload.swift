@@ -32,15 +32,15 @@ public enum NdefPayload: CustomStringConvertible {
     public var description: String {
         switch self {
         case .empty:
-            return "Empty Payload"
+            return "NdefPayload.empty"
         case .text(let text):
-            return text.description
+            return "NdefPayload.text \(text.description)"
         case .uri(let uri):
-            return uri.description
+            return "NdefPayload.uri \(uri.description)"
         case .smartPoster(let contents):
-            return "Smart Poster " + contents.description
+            return "NdefPayload.smartPoster \(contents.description)" 
         case .unknown(let data):
-            return "Unknown Payload <\(data.hexEncodedString(separator: " ", every: 4))>"
+            return "NdefPayload.unknown <\(data.hexEncodedString(separator: " ", every: 4))>"
         }
     }
     
