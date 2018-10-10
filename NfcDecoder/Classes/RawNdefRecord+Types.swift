@@ -1,5 +1,5 @@
 //
-//  NdefRecord+Types.swift
+//  RawNdefRecord+Types.swift
 //  NfcDecoder
 //
 //  Created by Alexander Vasenin on 10/10/2018.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension NdefRecord {
+extension RawNdefRecord {
     
     /// True if instance is a text record
     var isTextRecord: Bool { return header.typeNameFormat == .nfcWellKnown && payloadType == Data([0x54]) }

@@ -1,5 +1,5 @@
 //
-//  NdefRecord.Header.swift
+//  RawNdefRecord.Header.swift
 //  NfcDecoder
 //
 //  Created by Alexander Vasenin on 10/10/2018.
@@ -9,7 +9,7 @@
 import Foundation
 import CoreNFC
 
-extension NdefRecord {
+extension RawNdefRecord {
     
     /**
      First byte of NDEF record.

@@ -18,7 +18,7 @@ extension NdefPayload {
         
         private let payload: Data
         
-        public init(_ record: NdefRecord) {
+        public init(_ record: RawNdefRecord) {
             precondition(record.isUriRecord)
             self.payload = record.payload
         }

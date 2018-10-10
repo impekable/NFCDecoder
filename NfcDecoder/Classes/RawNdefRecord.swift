@@ -1,5 +1,5 @@
 //
-//  NdefRecord.swift
+//  RawNdefRecord.swift
 //  NfcDecoder
 //
 //  Created by Alexander Vasenin on 10/10/2018.
@@ -10,11 +10,11 @@ import Foundation
 import CoreNFC
 
 /**
- NFC NDEF record which contains payload described by type, length and optional identifier
- Note: In CoreNFC NDEF record is represented by confusingly named NFCNDEFPayload. Unfortunately we can't just extend NFCNDEFPayload since in has no public initializers (we need for smart posters support).
+ Low-level representation of NFC NDEF record which contains payload described by type, length and optional identifier
+ Essentially recreates NFCNDEFPayload internals for decoding smart posters payload (NFCNDEFPayload lacks public initializers)
  */
 
-public struct NdefRecord: CustomStringConvertible {
+public struct RawNdefRecord: CustomStringConvertible {
     
     /// Raw data of NDEF record
     public var data: Data
