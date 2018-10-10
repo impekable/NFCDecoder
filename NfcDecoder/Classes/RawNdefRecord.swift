@@ -64,7 +64,12 @@ public struct RawNdefRecord: CustomStringConvertible {
     /// Total record length in bytes
     public var totalLength: Int { return payloadOffset + payloadLength }
     
-    public var description: String { return "NdefRecord <\(data.hexEncodedString(separator: " ", every: 4))>" }
+    public var description: String {
+        let readableType = payloadType.hexEncodedString()
+        let readableId = identifier.hexEncodedString()
+        let readablePayload = payload.hexEncodedString(separator: " ", every: 4)
+        return String(format: "RawNdefRecord TNF=%d, type=<%@>, id=<%@>, payload=<$@>", typeNameFormat.rawValue, readableType, readableId, readablePayload)
+    }
     
 }
 
