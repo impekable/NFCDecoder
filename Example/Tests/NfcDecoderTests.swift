@@ -34,6 +34,26 @@ class NfcDecoderTests: XCTestCase {
         }
     }
     
+    func testSmartPoster1() {
+        let data = Data([0x91, 0x01, 0x1f, 0x55, 0x04, 0x69, 0x6d, 0x70, 0x65, 0x6b, 0x61, 0x62, 0x6c, 0x65, 0x2e, 0x63, 0x6f, 0x6d, 0x3f, 0x6d, 0x3d, 0x30, 0x34, 0x30, 0x45, 0x41, 0x31, 0x31, 0x41, 0x38, 0x30, 0x34, 0x39, 0x38, 0x30, 0x51, 0x01, 0x0c, 0x54, 0x02, 0x72, 0x75, 0x49, 0x6d, 0x70, 0x65, 0x6b, 0x61, 0x62, 0x6c, 0x65])
+        let record = NdefRecordMockup(typeNameFormat: .nfcWellKnown, type: Data([0x53, 0x70]), payload: data)
+        let payload = NfcDecoder().decode(record)
+        switch payload {
+        case .smartPoster(let subpayloads):
+            XCTAssertEqual(subpayloads.count, 2)
+            switch (subpayloads[0], subpayloads[1]) {
+            case (.uri(let uri), .text(let text)):
+                XCTAssertEqual(text.languageCode, "ru")
+                XCTAssertEqual(text.text, "Impekable")
+                XCTAssertEqual(uri.url.absoluteString, "https://impekable.com?m=040EA11A804980")
+            default:
+                XCTFail()
+            }
+        default:
+            XCTFail()
+        }
+    }
+    
 }
 
 
