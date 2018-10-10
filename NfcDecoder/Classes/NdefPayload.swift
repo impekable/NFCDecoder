@@ -40,7 +40,7 @@ public enum NdefPayload: CustomStringConvertible {
         case .smartPoster(let contents):
             return "Smart Poster " + contents.description
         case .unknown(let data):
-            return "Unknown Payload (\(data.count) bytes)"
+            return "Unknown Payload <\(data.hexEncodedString(separator: " ", every: 4))>"
         }
     }
     
