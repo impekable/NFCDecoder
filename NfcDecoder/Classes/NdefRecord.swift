@@ -28,9 +28,10 @@ public struct NdefRecord: CustomStringConvertible {
     /// First byte with TNF and various flags
     public var header: Header { return Header(rawValue: data[0]) }
     
-    var payloadTypeLength: Int { return Int(data[1]) }
+    private var payloadTypeLength: Int { return Int(data[1]) }
     
-    var payloadLength: Int {
+    /// Payload length in bytes
+    public var payloadLength: Int {
         precondition(!header.contains(.isChunked), "Chunked NDEF records are not supported")
         if header.contains(.isShortRecord) {
             let rawShortLength: UInt8 = data[2]
@@ -42,18 +43,26 @@ public struct NdefRecord: CustomStringConvertible {
     }
     
     private var messageIdLengthOffset: Int { return header.contains(.isShortRecord) ? 3 : 6 }
-    var messageIdLength: Int { return header.contains(.hasIdLength) ? Int(data[messageIdLengthOffset]) : 0 }
+    
+    private var messageIdLength: Int { return header.contains(.hasIdLength) ? Int(data[messageIdLengthOffset]) : 0 }
     
     private var payloadTypeOffset: Int { return messageIdLengthOffset + (header.contains(.hasIdLength) ? 1 : 0) }
-    var payloadType: Data { return Data(data[payloadTypeOffset ..< payloadTypeOffset+payloadTypeLength]) }
+    
+    /// Identifier describing payload type (follows structure, encoding and format defined by TNF)
+    public var payloadType: Data { return Data(data[payloadTypeOffset ..< payloadTypeOffset+payloadTypeLength]) }
     
     private var messageIdOffset: Int { return payloadTypeOffset + payloadTypeLength }
-    var messageId: Data { return Data(data[messageIdOffset ..< messageIdOffset+messageIdLength]) }
+    
+    /// Message identifier (rarely used)
+    public var messageId: Data { return Data(data[messageIdOffset ..< messageIdOffset+messageIdLength]) }
     
     private var payloadOffset: Int { return messageIdOffset + messageIdLength }
-    var payload: Data { return Data(data[payloadOffset ..< payloadOffset+payloadLength]) }
     
-    var totalLength: Int { return payloadOffset + payloadLength }
+    /// Application data
+    public var payload: Data { return Data(data[payloadOffset ..< payloadOffset+payloadLength]) }
+    
+    /// Total record length in bytes
+    public var totalLength: Int { return payloadOffset + payloadLength }
     
     public var description: String { return "NdefRecord <\(data.hexEncodedString(separator: " ", every: 4))>" }
     
