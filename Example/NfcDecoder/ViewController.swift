@@ -18,17 +18,22 @@ class ViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupAppearance()
+        scanButton.layer.borderColor = UIColor.lightGray.cgColor
     }
     
     @IBAction func didTapScanButton(_ sender: Any) { startNfcSession() }
+    
+    private func display(success: Bool, message: String) {
+        statusLabel.text = success ? "✅" : "❌"
+        messageLabel.text = message
+    }
     
     // MARK: NFC scanning
     
     private var nfcSession: NFCReaderSession?
     
     private func startNfcSession() {
-        guard nfcSession == nil else { return }
+        guard nfcSession == nil else { return } // Only one session is allowed
         guard NFCNDEFReaderSession.readingAvailable else { display(success: false, message: "NFC requires iPhone 7 or higher and at least iOS 11"); return }
         nfcSession = NFCNDEFReaderSession(delegate: self, queue: DispatchQueue.main, invalidateAfterFirstRead: false)
         nfcSession!.begin()
@@ -54,20 +59,6 @@ class ViewController: UIViewController, NFCNDEFReaderSessionDelegate {
         let payload = NfcDecoder().decode(messages)
         display(success: true, message: payload.description)
         stopNfcSession()
-    }
-    
-    // MARK: misc
-    
-    private func setupAppearance() {
-        scanButton.titleLabel!.font = .systemFont(ofSize: UIFont.buttonFontSize, weight: .semibold)
-        scanButton.layer.borderColor = UIColor.lightGray.cgColor
-        scanButton.layer.cornerRadius = 22
-        scanButton.layer.borderWidth = 1
-    }
-    
-    private func display(success: Bool, message: String) {
-        statusLabel.text = success ? "✅" : "❌"
-        messageLabel.text = message
     }
     
 }
