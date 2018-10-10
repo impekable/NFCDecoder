@@ -25,6 +25,9 @@ public struct NdefRecord: CustomStringConvertible {
     /// Creates NdefRecord from NFCNDEFPayload
     public init(_ record: NFCNDEFPayload) { self.data = record.payload }
     
+    /// First byte with TNF and various flags
+    public var header: Header { return Header(rawValue: data[0]) }
+    
     public var description: String { return "NdefRecord <\(data.hexEncodedString(separator: " ", every: 4))>" }
     
 }
