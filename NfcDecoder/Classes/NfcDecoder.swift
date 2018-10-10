@@ -19,22 +19,22 @@ public class NfcDecoder {
     public init() {}
     
     /// Decodes multiple NFCNDEFMessage's into array of arrays of NdefPayload's
-    public func decode(_ messages: [NFCNDEFMessage]) throws -> [[NdefPayload]] {
-        return try messages.map { try decode($0) }
+    public func decode(_ messages: [NFCNDEFMessage]) -> [[NdefPayload]] {
+        return messages.map { decode($0) }
     }
     
     /// Decodes single NFCNDEFMessage into array of NdefPayload's
-    public func decode(_ message: NFCNDEFMessage) throws -> [NdefPayload] {
-        return try message.records.map { try decode($0) }
+    public func decode(_ message: NFCNDEFMessage) -> [NdefPayload] {
+        return message.records.map { decode($0) }
     }
     
     /// Decodes NFCNDEFPayload into NdefPayload
-    public func decode(_ record: NFCNDEFPayload) throws -> NdefPayload {
-        return try decode(record as NdefRecord)
+    public func decode(_ record: NFCNDEFPayload) -> NdefPayload {
+        return decode(record as NdefRecord)
     }
     
     /// Decodes NdefRecord into NdefPayload
-    public func decode(_ record: NdefRecord) throws -> NdefPayload {
+    public func decode(_ record: NdefRecord) -> NdefPayload {
         switch true {
         case record.isTextRecord:
             let text = NdefPayload.Text(record)
@@ -44,7 +44,7 @@ public class NfcDecoder {
             return NdefPayload.uri(uri)
         case record.isSmartPosterRecord:
             let subrecords = NdefPayload.SmartPoster.extractSubrecords(from: record)
-            let payloads = subrecords.map { try! decode($0) }
+            let payloads = subrecords.map { decode($0) }
             return NdefPayload.smartPoster(payloads)
         default:
             return NdefPayload.unknown(record)
