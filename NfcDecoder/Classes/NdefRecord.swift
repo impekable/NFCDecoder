@@ -28,6 +28,33 @@ public struct NdefRecord: CustomStringConvertible {
     /// First byte with TNF and various flags
     public var header: Header { return Header(rawValue: data[0]) }
     
+    var payloadTypeLength: Int { return Int(data[1]) }
+    
+    var payloadLength: Int {
+        precondition(!header.contains(.isChunked), "Chunked NDEF records are not supported")
+        if header.contains(.isShortRecord) {
+            let rawShortLength: UInt8 = data[2]
+            return Int(rawShortLength)
+        } else {
+            let rawLongLength: UInt32 = data[2..<6].withUnsafeBytes() { return CFSwapInt32BigToHost($0.pointee) }
+            return Int(rawLongLength)
+        }
+    }
+    
+    private var messageIdLengthOffset: Int { return header.contains(.isShortRecord) ? 3 : 6 }
+    var messageIdLength: Int { return header.contains(.hasIdLength) ? Int(data[messageIdLengthOffset]) : 0 }
+    
+    private var payloadTypeOffset: Int { return messageIdLengthOffset + (header.contains(.hasIdLength) ? 1 : 0) }
+    var payloadType: Data { return Data(data[payloadTypeOffset ..< payloadTypeOffset+payloadTypeLength]) }
+    
+    private var messageIdOffset: Int { return payloadTypeOffset + payloadTypeLength }
+    var messageId: Data { return Data(data[messageIdOffset ..< messageIdOffset+messageIdLength]) }
+    
+    private var payloadOffset: Int { return messageIdOffset + messageIdLength }
+    var payload: Data { return Data(data[payloadOffset ..< payloadOffset+payloadLength]) }
+    
+    var totalLength: Int { return payloadOffset + payloadLength }
+    
     public var description: String { return "NdefRecord <\(data.hexEncodedString(separator: " ", every: 4))>" }
     
 }
