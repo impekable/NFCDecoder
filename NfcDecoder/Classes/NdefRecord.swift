@@ -16,10 +16,13 @@ import CoreNFC
 
 public struct NdefRecord: CustomStringConvertible {
     
-    var data: Data
+    /// Raw data of NDEF record
+    public var data: Data
     
+    /// Creates NdefRecord from raw Data
     public init(_ data: Data) { self.data = data }
     
+    /// Creates NdefRecord from NFCNDEFPayload
     public init(_ record: NFCNDEFPayload) { self.data = record.payload }
     
     public var description: String { return "NdefRecord <\(data.hexEncodedString(separator: " ", every: 4))>" }

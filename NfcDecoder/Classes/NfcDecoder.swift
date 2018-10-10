@@ -15,6 +15,7 @@ import CoreNFC
 
 public class NfcDecoder {
     
+    /// Creates NfcDecoder instance
     public init() {}
     
     /// Decodes multiple NFCNDEFMessage's into array of arrays of NdefPayload's
