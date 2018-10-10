@@ -23,12 +23,22 @@ extension NdefRecord {
         
         public init(rawValue: UInt8) { self.rawValue = rawValue }
         
+        /// Indicates structure of type field
         public var typeNameFormat: NFCTypeNameFormat { return NFCTypeNameFormat(rawValue: rawValue & 0x07)! }
         
+        /// Flag indicating presence of identificator length (and identificator itself)
         public static let hasIdLength = Header(rawValue: 1 << 3)
+        
+        /// If set, payload length is 1 byte long (otherwise 4 bytes long)
         public static let isShortRecord = Header(rawValue: 1 << 4)
+        
+        /// Flag indicating chunked record (not supported by NfcDecoder)
         public static let isChunked = Header(rawValue: 1 << 5)
+        
+        /// Flag indicating start of NDEF message
         public static let isMessageBegin = Header(rawValue: 1 << 6)
+        
+        /// Flag indicating end of NDEF message
         public static let isMessageEnd = Header(rawValue: 1 << 7)
         
         // FIXME: description + TNF description
