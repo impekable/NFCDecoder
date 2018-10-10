@@ -43,7 +43,9 @@ public class NfcDecoder {
             let uri = NdefPayload.Uri(record)
             return NdefPayload.uri(uri)
         case record.isSmartPosterRecord:
-            fatalError() // FIXME
+            let subrecords = NdefPayload.SmartPoster.extractSubrecords(from: record)
+            let payloads = subrecords.map { try! decode($0) }
+            return NdefPayload.smartPoster(payloads)
         default:
             return NdefPayload.unknown(record)
         }
