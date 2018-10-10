@@ -68,7 +68,7 @@ public struct RawNdefRecord: CustomStringConvertible {
         let readableType = payloadType.hexEncodedString()
         let readableId = identifier.hexEncodedString()
         let readablePayload = payload.hexEncodedString(separator: " ", every: 4)
-        return String(format: "RawNdefRecord TNF=%d, type=<%@>, id=<%@>, payload=<$@>", typeNameFormat.rawValue, readableType, readableId, readablePayload)
+        return String(format: "RawNdefRecord TNF=%d, type=<%@>, id=<%@>, payload=<%@>", typeNameFormat.rawValue, readableType, readableId, readablePayload)
     }
     
 }
