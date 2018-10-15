@@ -8,7 +8,8 @@
 
 import Foundation
 
-// Note: we MUST name this file NdefPayload.UriPrefix.swift, without the dot between Uri and Prefix (otherwise NdefPayload.Uri.Prefix.swift goes before NdefPayload.Uri.swift which triggers https://bugs.swift.org/browse/SR-631)
+// We MUST name this file NdefPayload.UriPrefix.swift, without the dot between Uri and Prefix,
+// otherwise NdefPayload.Uri.Prefix.swift compiles before NdefPayload.Uri.swift which triggers https://bugs.swift.org/browse/SR-631
 
 extension NdefPayload.Uri {
     

@@ -37,7 +37,7 @@ public struct RawNdefRecord: CustomStringConvertible {
             let rawShortLength: UInt8 = data[2]
             return Int(rawShortLength)
         } else {
-            let rawLongLength: UInt32 = data[2..<6].withUnsafeBytes() { return CFSwapInt32BigToHost($0.pointee) }
+            let rawLongLength: UInt32 = data[2..<6].withUnsafeBytes { return CFSwapInt32BigToHost($0.pointee) }
             return Int(rawLongLength)
         }
     }
