@@ -3,7 +3,7 @@
 //  NfcDecoder
 //
 //  Created by Alexander Vasenin on 09/10/2018.
-//  Copyright © 2018 Impekable LLC. All rights reserved.
+//  Copyright © 2018 Impekable LLC. MIT License.
 //
 
 import Foundation
