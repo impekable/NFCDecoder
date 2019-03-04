@@ -18,7 +18,8 @@ extension Data {
         let indexes = Array(stride(from: startIndex, to: endIndex, by: every))
         let strings = indexes.map { index -> String in
             let chunk = subdata(in: index ..< Swift.min(index+every, endIndex))
-            return chunk.hexEncodedString() }
+            return chunk.hexEncodedString()
+        }
         return strings.joined(separator: separator)
     }
     
