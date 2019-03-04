@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  NfcDecoder
+//  NFCDecoder
 //
 //  Created by Alexander Vasenin on 10/08/2018.
 //  Copyright (c) 2018 Impekable LLC. MIT License.
@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreNFC
-import NfcDecoder
+import NFCDecoder
 
 class ViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     
@@ -56,7 +56,7 @@ class ViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     }
     
     func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
-        let payload = NfcDecoder().decode(messages)
+        let payload = NFCDecoder().decode(messages)
         display(success: true, message: payload.description)
         stopNfcSession()
     }

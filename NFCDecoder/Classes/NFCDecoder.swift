@@ -1,6 +1,6 @@
 //
-//  NfcDecoder.swift
-//  NfcDecoder
+//  NFCDecoder.swift
+//  NFCDecoder
 //
 //  Created by Alexander Vasenin on 09/10/2018.
 //  Copyright © 2018 Impekable LLC. MIT License.
@@ -13,9 +13,9 @@ import CoreNFC
  An object that decodes NFCNDEFMessage into meaningful data
  */
 
-public class NfcDecoder {
+public class NFCDecoder {
     
-    /// Creates NfcDecoder instance
+    /// Creates NFCDecoder instance
     public init() {}
     
     /// Decodes multiple NFCNDEFMessage's into array of arrays of NdefPayload's

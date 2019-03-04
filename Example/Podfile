@@ -1,9 +1,9 @@
 use_frameworks!
 platform :ios, '11.0'
 
-target 'NfcDecoder_Example' do
-  pod 'NfcDecoder', :path => '../'
-  target 'NfcDecoder_Tests' do
+target 'NFCDecoder_Example' do
+  pod 'NFCDecoder', :path => '../'
+  target 'NFCDecoder_Tests' do
     inherit! :search_paths
   end
 end

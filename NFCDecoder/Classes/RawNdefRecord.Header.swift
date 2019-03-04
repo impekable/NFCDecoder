@@ -1,6 +1,6 @@
 //
 //  RawNdefRecord.Header.swift
-//  NfcDecoder
+//  NFCDecoder
 //
 //  Created by Alexander Vasenin on 10/10/2018.
 //  Copyright © 2018 Impekable LLC. MIT License.
@@ -32,7 +32,7 @@ extension RawNdefRecord {
         /// If set, payload length is 1 byte long (otherwise 4 bytes long)
         public static let isShortRecord = Header(rawValue: 1 << 4)
         
-        /// Flag indicating chunked record (not supported by NfcDecoder)
+        /// Flag indicating chunked record (not supported by NFCDecoder)
         public static let isChunked = Header(rawValue: 1 << 5)
         
         /// Flag indicating start of NDEF message

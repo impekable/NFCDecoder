@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "NfcDecoder_Example.app"
-               BlueprintName = "NfcDecoder_Example"
-               ReferencedContainer = "container:NfcDecoder.xcodeproj">
+               BuildableName = "NFCDecoder_Example.app"
+               BlueprintName = "NFCDecoder_Example"
+               ReferencedContainer = "container:NFCDecoder.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "NfcDecoder_Tests.xctest"
-               BlueprintName = "NfcDecoder_Tests"
-               ReferencedContainer = "container:NfcDecoder.xcodeproj">
+               BuildableName = "NFCDecoder_Tests.xctest"
+               BlueprintName = "NFCDecoder_Tests"
+               ReferencedContainer = "container:NFCDecoder.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "NfcDecoder_Tests.xctest"
-               BlueprintName = "NfcDecoder_Tests"
-               ReferencedContainer = "container:NfcDecoder.xcodeproj">
+               BuildableName = "NFCDecoder_Tests.xctest"
+               BlueprintName = "NFCDecoder_Tests"
+               ReferencedContainer = "container:NFCDecoder.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "NfcDecoder_Example.app"
-            BlueprintName = "NfcDecoder_Example"
-            ReferencedContainer = "container:NfcDecoder.xcodeproj">
+            BuildableName = "NFCDecoder_Example.app"
+            BlueprintName = "NFCDecoder_Example"
+            ReferencedContainer = "container:NFCDecoder.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "NfcDecoder_Example.app"
-            BlueprintName = "NfcDecoder_Example"
-            ReferencedContainer = "container:NfcDecoder.xcodeproj">
+            BuildableName = "NFCDecoder_Example.app"
+            BlueprintName = "NFCDecoder_Example"
+            ReferencedContainer = "container:NFCDecoder.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -99,9 +99,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "NfcDecoder_Example.app"
-            BlueprintName = "NfcDecoder_Example"
-            ReferencedContainer = "container:NfcDecoder.xcodeproj">
+            BuildableName = "NFCDecoder_Example.app"
+            BlueprintName = "NFCDecoder_Example"
+            ReferencedContainer = "container:NFCDecoder.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

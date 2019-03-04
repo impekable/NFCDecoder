@@ -1,15 +1,15 @@
 PODS:
-  - NfcDecoder (0.1.0)
+  - NFCDecoder (0.1.0)
 
 DEPENDENCIES:
-  - NfcDecoder (from `../`)
+  - NFCDecoder (from `../`)
 
 EXTERNAL SOURCES:
-  NfcDecoder:
+  NFCDecoder:
     :path: "../"
 
 SPEC CHECKSUMS:
-  NfcDecoder: e9533bf3d3e66ae94b0f6d1403486fb73dfa67ce
+  NFCDecoder: e9533bf3d3e66ae94b0f6d1403486fb73dfa67ce
 
 PODFILE CHECKSUM: b63e9ee878e1d340c81b0d91b2365298dc7a88cd
 

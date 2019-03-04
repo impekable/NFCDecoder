@@ -1,6 +1,6 @@
 //
 //  RawNdefRecord.swift
-//  NfcDecoder
+//  NFCDecoder
 //
 //  Created by Alexander Vasenin on 10/10/2018.
 //  Copyright © 2018 Impekable LLC. MIT License.
