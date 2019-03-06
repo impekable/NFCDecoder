@@ -6,15 +6,27 @@
 
 Apple did a great job introducing `CoreNFC` in iOS 11. `NFCDecoder` adds the final piece to the puzzle - it gets actual Strings and URLs from that `NFCNDEFPayload` or `NFCNDEFMessage`. All widely used payload types are supported (text, URI and smart poster). `NFCDecoder` is free, lightweight and written in Swift. Try the example!
 
-## Usage
+## Installation
 
-Add to your Podfile:
+### Cocoapods
+
+NFCDecoder is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'NFCDecoder'
 ```
+### Carthage
 
-Run `pod install`. Then add to your `NFCReaderSessionDelegate`:
+NFCDecoder is compatible with [Carthage](https://github.com/Carthage/Carthage). Add it to your `Cartfile`:
+
+```ruby
+github "impekable/NFCDecoder"
+```
+
+## Usage
+
+Add to your `NFCReaderSessionDelegate`:
 
 ```swift
     func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
