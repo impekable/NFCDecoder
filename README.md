@@ -49,8 +49,8 @@ iOS 11+, iPhone 7 or newer
 
 ## Author
 
-Impekable LLC, www.impekable.com
-Alexander Vasenin, alexv@impekable.com
+- Impekable LLC, www.impekable.com
+- Alexander Vasenin, alexv@impekable.com
 
 ## License
 
