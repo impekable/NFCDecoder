@@ -18,9 +18,9 @@ public class NFCDecoder {
     /// Creates NFCDecoder instance
     public init() {}
     
-    /// Decodes multiple NFCNDEFMessage's into array of arrays of NdefPayload's
-    public func decode(_ messages: [NFCNDEFMessage]) -> [[NdefPayload]] {
-        return messages.map { decode($0) }
+    /// Decodes multiple NFCNDEFMessage's into array of NdefPayload's
+    public func decode(_ messages: [NFCNDEFMessage]) -> [NdefPayload] {
+        return messages.flatMap { decode($0) }
     }
     
     /// Decodes single NFCNDEFMessage into array of NdefPayload's
