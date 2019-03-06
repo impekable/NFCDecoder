@@ -10,7 +10,7 @@ import Foundation
 import CoreNFC
 
 /**
- An object that decodes NFCNDEFMessage into meaningful data
+ Decodes NFCNDEFMessage or NFCNDEFPayload into String, URL or smart poster.
  */
 
 public class NFCDecoder {
