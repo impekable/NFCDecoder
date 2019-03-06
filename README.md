@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/cocoapods/l/NFCDecoder.svg?style=flat)](https://cocoapods.org/pods/NFCDecoder)
 [![Platform](https://img.shields.io/cocoapods/p/NFCDecoder.svg?style=flat)](https://cocoapods.org/pods/NFCDecoder)
 
-Apple did a great job introducing `CoreNFC` in iOS 11. `NFCDecoder` adds the final piece to the puzzle - it gets actual `String`s and `URL`s from that `NFCNDEFPayload` or `NFCNDEFMessage`. All widely used payload types are supported (text, URI and smart poster). It's free, lightweight and written in Swift. Try the example!
+Apple did a great job introducing `CoreNFC` in iOS 11. `NFCDecoder` adds the final piece to the puzzle - it gets actual Strings and URLs from that `NFCNDEFPayload` or `NFCNDEFMessage`. All widely used payload types are supported (text, URI and smart poster). `NFCDecoder` is free, lightweight and written in Swift. Try the example!
 
 ## Usage
 
@@ -45,13 +45,12 @@ Full example project is available in Example directory.
 
 iOS 11+, iPhone 7 or newer.
 
-## Authors
+## Author
 
-- Impekable LLC, www.impekable.com
-- Alexander Vasenin, alexv@impekable.com
+[Impekable](https://www.impekable.com) is a UI design and mobile development studio based in San Jose, CA. We help organizations from startups to Fortune 500 companies create memorable, human-centric mobile experiences.
 
 ## License
 
-NFCDecoder is available under the MIT license. See the LICENSE file for more info.
+`NFCDecoder` is available under the MIT license. See the LICENSE file for more info.
 
 
