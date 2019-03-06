@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/cocoapods/l/NFCDecoder.svg?style=flat)](https://cocoapods.org/pods/NFCDecoder)
 [![Platform](https://img.shields.io/cocoapods/p/NFCDecoder.svg?style=flat)](https://cocoapods.org/pods/NFCDecoder)
 
-Apple did a great job introducing CoreNFC in iOS 11. However, one critical piece is still missing even in iOS 12 - getting actual application level data from that NFCNDEFPayload. NFCDecoder purpose is to get vanilla String or URL from low level NFC tag payload. It supports all widely used payload types: text, URI and smart poster. It's lightweight, written in Swift and has tests. Try the example!
+Apple did a great job introducing `CoreNFC` in iOS 11. However, one critical piece is still missing (even in iOS 12) - getting application data from that `NFCNDEFPayload` or `NFCNDEFMessage`. NFCDecoder purpose is to get vanilla String or URL from low level NFC tag payload. It supports all widely used payload types: text, URI and smart poster. It's lightweight, written in Swift and has tests. Try the example!
 
 ## Usage
 
@@ -14,7 +14,7 @@ Add to your Podfile:
 pod 'NFCDecoder'
 ```
 
-Add to your `NFCReaderSessionDelegate`:
+Run `pod install`. Then add to your `NFCReaderSessionDelegate`:
 
 ```swift
     func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
@@ -39,15 +39,13 @@ Add to your `NFCReaderSessionDelegate`:
     }
 ```
 
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+Full example project is available in Example directory.
 
 ## Requirements
 
-iOS 11+, iPhone 7 or newer
+iOS 11+, iPhone 7 or newer.
 
-## Author
+## Authors
 
 - Impekable LLC, www.impekable.com
 - Alexander Vasenin, alexv@impekable.com
