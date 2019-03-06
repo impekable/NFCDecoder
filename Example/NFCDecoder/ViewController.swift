@@ -56,9 +56,25 @@ class ViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     }
     
     func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
-        let payload = NFCDecoder().decode(messages)
-        display(success: true, message: payload.description)
+        let payloads = NFCDecoder().decode(messages)
+        payloads.forEach { logToConsole(payload: $0) }
+        display(success: true, message: payloads.description)
         stopNfcSession()
+    }
+    
+    func logToConsole(payload: NdefPayload) {
+        switch payload {
+        case .text(let text):
+            print(text.text, text.languageCode)
+        case .uri(let uri):
+            print(uri.url.absoluteString)
+        case .smartPoster(let morePayloads): // Smart poster is just a container for more payloads
+            morePayloads.forEach { logToConsole(payload: $0) }
+        case .empty:
+            print("empty payload")
+        case .unknown(_):
+            print("oops")
+        }
     }
     
 }
