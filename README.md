@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/cocoapods/l/NFCDecoder.svg?style=flat)](https://cocoapods.org/pods/NFCDecoder)
 [![Platform](https://img.shields.io/cocoapods/p/NFCDecoder.svg?style=flat)](https://cocoapods.org/pods/NFCDecoder)
 
-Apple did a great job introducing `CoreNFC` in iOS 11. However, one critical piece is still missing (even in iOS 12) - getting application data from that `NFCNDEFPayload` or `NFCNDEFMessage`. NFCDecoder purpose is to get vanilla String or URL from low level NFC tag payload. It supports all widely used payload types: text, URI and smart poster. It's lightweight, written in Swift and has tests. Try the example!
+Apple did a great job introducing `CoreNFC` in iOS 11. `NFCDecoder` adds the final piece to the puzzle - it gets actual `String`s and `URL`s from that `NFCNDEFPayload` or `NFCNDEFMessage`. All widely used payload types are supported (text, URI and smart poster). It's free, lightweight and written in Swift. Try the example!
 
 ## Usage
 
