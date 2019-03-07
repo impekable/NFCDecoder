@@ -78,6 +78,17 @@ class NFCDecoderTests: XCTestCase {
         }
     }
     
+    func testEmptyPayload() {
+        let record = NdefRecordMockup(typeNameFormat: .nfcWellKnown, type: Data([0x00]), payload: Data())
+        let payload = NFCDecoder().decode(record)
+        switch payload {
+        case .empty:
+            XCTAssert(true)
+        default:
+            XCTFail()
+        }
+    }
+    
 }
 
 

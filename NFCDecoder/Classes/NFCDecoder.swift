@@ -36,6 +36,8 @@ public class NFCDecoder {
     /// Decodes NdefRecord into NdefPayload
     public func decode(_ record: NdefRecord) -> NdefPayload {
         switch true {
+        case record.isEmptyRecord:
+            return NdefPayload.empty
         case record.isTextRecord:
             let text = NdefPayload.Text(record)
             return NdefPayload.text(text)

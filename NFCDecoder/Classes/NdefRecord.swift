@@ -32,6 +32,9 @@ public protocol NdefRecord: CustomStringConvertible {
 
 extension NdefRecord {
     
+    /// True if instance is an empty record
+    var isEmptyRecord: Bool { return typeNameFormat == .nfcWellKnown && type == Data([0x00]) }
+    
     /// True if instance is a text record
     var isTextRecord: Bool { return typeNameFormat == .nfcWellKnown && type == Data([0x54]) }
     
