@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   
   s.homepage         = 'https://github.com/impekable/NFCDecoder'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.authors          = { 'Impekable LLC' => 'pek@impekable.com', 'Alexander Vasenin' => 'alexv@impekable.com' }
+  s.authors          = { 'Impekable LLC' => 'sales@impekable.com', 'Alexander Vasenin' => 'alexv@impekable.com' }
   s.source           = { :git => 'https://github.com/impekable/NFCDecoder.git', :tag => s.version.to_s }
   
   s.ios.deployment_target = '11.0'
