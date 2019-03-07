@@ -1,0 +1,6 @@
+framework module NFCDecoder {
+  umbrella header "NFCDecoder-umbrella.h"
+
+  export *
+  module * { export * }
+}
