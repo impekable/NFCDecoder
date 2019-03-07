@@ -16,6 +16,7 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'NFCDecoder'
 ```
+
 ### Carthage
 
 NFCDecoder is compatible with [Carthage](https://github.com/Carthage/Carthage). Add it to your `Cartfile`:
@@ -29,6 +30,8 @@ github "impekable/NFCDecoder"
 Add to your `NFCReaderSessionDelegate`:
 
 ```swift
+    import NFCDecoder
+    
     func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
         let payloads = NFCDecoder().decode(messages)
         payloads.forEach { logToConsole(payload: $0) }
