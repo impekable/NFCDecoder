@@ -1,5 +1,6 @@
 use_frameworks!
 platform :ios, '11.0'
+install! 'cocoapods', :share_schemes_for_development_pods => true
 
 target 'NFCDecoder_Example' do
   pod 'NFCDecoder', :path => '../'
