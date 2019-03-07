@@ -6,7 +6,7 @@
 Pod::Spec.new do |s|
   
   s.name             = 'NFCDecoder'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'Decodes NFCNDEFMessage or NFCNDEFPayload into String, URL or smart poster.'
   
   s.description      = <<-DESC
