@@ -191,6 +191,7 @@
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "NFCDecoder_Tests" */;
 			buildPhases = (
 				C48F74F07DC6122FE23D27CD /* [CP] Check Pods Manifest.lock */,
+				6F450BF522346DCB00398F1B /* Run Script (check if we run `pod install`) */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
@@ -271,6 +272,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		6F450BF522346DCB00398F1B /* Run Script (check if we run `pod install`) */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/../NFCDecoder.podspec",
+				"${PODS_ROOT}/Local Podspecs/NFCDecoder.podspec.json",
+			);
+			name = "Run Script (check if we run `pod install`)";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "GLOBAL_VERSION=`/usr/bin/grep \"s.version\" \"${SRCROOT}/../NFCDecoder.podspec\" | /usr/bin/head -1 | /usr/bin/grep -oE \"\\d+\\.\\d+\\.\\d+\"`\n/bin/echo \"Global Pod Version\" $GLOBAL_VERSION\nLOCAL_VERSION=`/usr/bin/grep \"version\" \"${PODS_ROOT}/Local Podspecs/NFCDecoder.podspec.json\" | /usr/bin/head -1 | /usr/bin/grep -oE \"\\d+\\.\\d+\\.\\d+\"`\n/bin/echo \"Local Pod Version\" $LOCAL_VERSION \n\nif [ $GLOBAL_VERSION = $LOCAL_VERSION ]; then\n  echo \"Podfile versions are the same. Good.\"\nelse\n  echo \"Error: Podfiles are not in sync. Please run 'pod install'.\"\n  exit 1\nfi;\n";
+		};
 		C48F74F07DC6122FE23D27CD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
